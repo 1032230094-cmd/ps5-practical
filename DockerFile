@@ -1,0 +1,16 @@
+# Use an official Python runtime as the base image
+FROM python:3.9-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Install dependencies (The code uses 'rich')
+# We run this inline to keep it simple, or you could copy a requirements.txt
+RUN pip install rich
+
+# Copy the Python script (Assuming the file is named todo.py)
+COPY todo.py /app/todo.py
+
+# Run the application
+# -u ensures stdout is unbuffered so you can see print statements immediately
+CMD ["python", "-u", "/app/todo.py"]

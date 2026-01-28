@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-todo-app
+spec:
+  # For a CLI app, usually 1 replica is best so you know which one you are attaching to
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: python-todo-app
+  template:
+    metadata:
+      labels:
+        app: python-todo-app
+    spec:
+      containers:
+      - name: python-todo-app
+        image: python-todo-app:latest
+        # The following two lines allow you to interact with the CLI
+        stdin: true
+        tty: true
+        # Ports section removed because the Python script does not start a web server
+scrape_configs:
+ - job_name: 'python-todo-app'
+   static_configs:
+     # This assumes the pod/service is reachable at this address
+     # Note: The Python script provided does not listen on any port by default.
+     - targets: ['localhost:8000']
+
