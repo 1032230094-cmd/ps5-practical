@@ -19,10 +19,11 @@ jobs:
     - name: Build Docker image
       run: |
         docker buildx build \
-          --file ./path/to/your/Dockerfile \
-          --context . \
-          -t my-image1:latest . \
-          --push
+        --file ./path/to/your/Dockerfile \
+        -t my-image1:latest \
+        --push \
+        .
+
 
     - name: Run Tests
       run: |
