@@ -19,9 +19,10 @@ jobs:
     - name: Build Docker image
       run: |
         docker buildx build \
-        -t my-image1:latest \
-        --push \
-        .
+          -t my-image1:latest \
+          --push \
+          .
+
 
 
     - name: Run Tests
