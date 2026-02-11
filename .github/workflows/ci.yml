@@ -19,7 +19,8 @@ jobs:
     - name: Build Docker image
       run: |
         docker buildx build \
-          -t my-image1:latest \
+          -t 1032230094/my-image1:latest
+
           --push \
           .
 
