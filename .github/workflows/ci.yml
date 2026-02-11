@@ -21,9 +21,9 @@ jobs:
         docker buildx build \
           --file ./path/to/your/Dockerfile \
           --context . \
-          -t my-image:latest . \
+          -t my-image1:latest . \
           --push
 
     - name: Run Tests
       run: |
-        docker run --rm my-image:latest.
+        docker run --rm my-image1:latest.
