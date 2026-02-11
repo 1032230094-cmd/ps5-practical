@@ -19,7 +19,7 @@ jobs:
     - name: Build Docker image
       run: |
         docker buildx build \
-        --file .C:\Users\Lab 310\Desktop\AIDS-B_02\ps5-practical\Dockerfile \
+        --file .\Dockerfile \
         -t my-image1:latest \
         --push \
         .
