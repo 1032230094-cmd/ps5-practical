@@ -19,7 +19,7 @@ jobs:
     - name: Build Docker image
       run: |
         docker buildx build \
-        --file .\Dockerfile \
+        --file . \
         -t my-image1:latest \
         --push \
         .
